@@ -6,6 +6,8 @@ var authCheck = require('../lib_login/authCheck.js');
 var template = require('../lib_login/template.js');
 var fs = require('fs');
 const path = require('path');
+const cors = require('cors');
+app.use(cors());
 
 var authRouter = require('../lib_login/auth.js')
 const app = express()
