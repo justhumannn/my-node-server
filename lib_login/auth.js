@@ -28,7 +28,7 @@ router.post('/login_process', function (request,response){
                 request.session.is_logined = true;
                 request.session.nickname = username;
                 request.session.save(function(){
-                    response.redirect(`/board/main`);
+                    response.redirect(`https://clientnode.netlify.app/board.html`);
                 });
             } else {
                 response.send(`<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); 
