@@ -2,13 +2,13 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const FileStore = require('session-file-store')(session);
-var authCheck = require('../lib_login/authCheck.js');
-var template = require('../lib_login/template.js');
+var authCheck = require('./lib_login/authCheck.js');
+var template = require('./lib_login/template.js');
 var fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
-var authRouter = require('../lib_login/auth.js')
+var authRouter = require('./lib_login/auth.js')
 const app = express()
 app.use(cors());
 app.use(express.static(__dirname + '/public'))
