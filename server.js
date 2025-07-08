@@ -7,10 +7,10 @@ var template = require('../lib_login/template.js');
 var fs = require('fs');
 const path = require('path');
 const cors = require('cors');
-app.use(cors());
 
 var authRouter = require('../lib_login/auth.js')
 const app = express()
+app.use(cors());
 app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
