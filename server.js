@@ -47,5 +47,5 @@ app.get('/board/main',(req,res) => {
         res.redirect('/auth/login');
         return false;
     }
-    res.sendFile(__dirname + '/board.html')
+    res.redirect('https://clientnode.netlify.app/board.html')
 })
