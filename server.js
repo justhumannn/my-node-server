@@ -24,10 +24,6 @@ app.listen(8080, () => {
     // process.chdir();
 })
 
-app.get('/',(요청, 응답) => {
-    응답.sendFile(__dirname + '/index.html')
-})
-
 app.get('/board',(req,res) => {
     if (!authCheck.isOwner(req,res)){
         res.redirect('/auth/login');
@@ -38,6 +34,7 @@ app.get('/board',(req,res) => {
     }
 })
 
+
 app.use('/auth',authRouter);
 app.get('/board/main',(req,res) => {
     if (!authCheck.isOwner(req,res)){
@@ -46,9 +43,3 @@ app.get('/board/main',(req,res) => {
     }
     res.sendFile(__dirname + '/board.html')
 })
-app.get('/num',(req,res) => [
-    res.sendFile(__dirname + '/num.html')
-])
-app.get('/rps',(req,res) => [
-    res.sendFile(__dirname + '/rsp.html')
-])
