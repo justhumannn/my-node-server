@@ -33,7 +33,9 @@ app.get('/board',(req,res) => {
         return false;
     }
 })
-
+app.get('/',(res,req) => {
+    res.redirect('https://clientnode.netlify.app/')
+})
 
 app.use('/auth',authRouter);
 app.get('/board/main',(req,res) => {
