@@ -17,7 +17,10 @@ app.use(session({
   secret: 'test',
   resave: false,
   saveUninitialized: true,
-  store:new FileStore(),
+  store:new FileStore({
+    path: path.join(__dirname, 'sessions'), // 절대 경로로 지정
+    retries: 0
+  }),
 }))
 app.listen(8080, () => {
     console.log('http://localhost:8080 에서 서버 실행중')
