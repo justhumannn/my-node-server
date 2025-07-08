@@ -34,7 +34,7 @@ app.get('/board',(req,res) => {
     }
 })
 app.get('/',(res,req) => {
-    res.redirect('https://clientnode.netlify.app/')
+    req.redirect('https://clientnode.netlify.app/')
 })
 
 app.use('/auth',authRouter);
